@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Party!!!</title>
+</head>
+<body>
+  <div ng-app="myApp">
+    My Party
+    <div ng-controller="GuestCtrl">
+      <input ng-model="searchTerm.name">
+
+      <ul>
+        <li ng-repeat="guest in guests | filter: searchTerm">
+          {{ guest.name }} — {{ guest.hatSize }}
+        </li>
+      </ul>
+
+      <input placeholder="name" ng-model="newGuestName">
+      <input placeholder="hat size" ng-model="newGuestHatSize"><br>
+      <button ng-click="addGuestName()">Add Guest</button>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.js"></script>
+  <script src="app.js"></script>
+  <script src="GuestCtrl.js"></script>
+</body>
+</html>
